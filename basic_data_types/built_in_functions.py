@@ -93,3 +93,11 @@ for i in rev_list:
     print(i)
 print(rev_list)
 print(list(rev_list))
+
+# sort list
+sort_list = sorted(rev_list)
+print(sort_list)
+
+# range
+print(range(1, 10))
+print(list(range(1, 10)))

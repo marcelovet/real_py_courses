@@ -1,6 +1,7 @@
 # https://realpython.com/lessons/functions-composite-data-types/
 # https://realpython.com/lessons/functions-math/
 # https://realpython.com/lessons/functions-type-conversion/
+# https://realpython.com/lessons/functions-iterables-and-iterators/
 # built-in functions
 # Composite data types
 # list, tuple
@@ -82,22 +83,47 @@ print(len(my_list))
 
 print([v == 1 for v in my_list])
 print(any([v == 1 for v in my_list]))
+# True if all elements in the iterator is True
 print(all([v == 1 for v in my_list]))
 # is True if at least one element is True
 print([v == 9 for v in my_list])
 print(any([v == 9 for v in my_list]))
 
 # reversed returns an iterator
-rev_list = reversed(my_list)
-for i in rev_list:
+for i in reversed(my_list):
     print(i)
+rev_list = reversed(my_list)
 print(rev_list)
 print(list(rev_list))
 
 # sort list
-sort_list = sorted(rev_list)
+sort_list = sorted(my_list)
 print(sort_list)
 
 # range
 print(range(1, 10))
 print(list(range(1, 10)))
+
+players = ['Mike', 'Bob', 'Sarah', 'Charlie', 'Jo']
+for num, player in enumerate(players):
+    print(num, player)
+
+countries = ['France', 'Tanzania', 'Canada']
+continents = ['Europe', 'Africa', 'North America']
+
+# zip to merge list in pairs
+merged = list(zip(countries, continents))
+print(merged)
+
+# create a iterator with an iterable
+my_iter = iter([1, 2, 3, 4, 5, 6])
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+print(next(my_iter))
+try:
+    print(next(my_iter))
+except StopIteration:
+    print('Iterator was totally consumed and raised StopIteration')
